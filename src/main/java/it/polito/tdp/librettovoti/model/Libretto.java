@@ -36,6 +36,27 @@ public class Libretto {
 	return risultato;
 	}
 	/**
+	 * Ricerca un voto del corso di cui è specificato il nome
+	 * se il corso non esiste restituisce null.
+	 * @param nomecorso
+	 * @return
+	 */
+	public Voto ricercaCorso(String nomecorso) {
+	//cerco la stringa nome corso nella lista
+	//se il nome dell'oggetto v (stringa) è uguale all'oggetto nomecorso (stringa)
+	//allora smetti e dammi il risultato
+    //nota hai usato il metodo equals() invece di == essendo 2 oggetti
+	//Le stringhe sono oggetti, allora usi equals().
+		Voto risultato = null;
+		for(Voto v : this.voti) {
+			if(v.getNome().equals(nomecorso)) {
+				risultato = v;
+				break;
+			}
+		}
+	return risultato;
+	}
+	/**
 	 * Il toString() della classe Libretto costruisce a mano, 
 	 * possiamo iterare sulla lista con for e chiedo
 	 * a v di stampare il singolo voto e lo metto a capo
